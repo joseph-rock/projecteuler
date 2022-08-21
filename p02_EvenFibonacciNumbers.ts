@@ -6,11 +6,11 @@
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
  */
 
-function nextFibonacciNum(nums: number[]) {
+function nextFibonacciNum(nums: number[]): number {
   return nums[nums.length - 1] + nums[nums.length - 2];
 }
 
-function fibonacciArray() {
+function sequence(): number[] {
   const fibonacciNums: number[] = [1, 2];
   while (nextFibonacciNum(fibonacciNums) < 4_000_000) {
     fibonacciNums.push(nextFibonacciNum(fibonacciNums));
@@ -18,7 +18,6 @@ function fibonacciArray() {
   return fibonacciNums;
 }
 
-const fibonacciNums: number[] = fibonacciArray();
-const evenOnly: number[] = fibonacciNums.filter((n) => n % 2 == 0);
+const evenOnly: number[] = sequence().filter((n) => n % 2 == 0);
 const sumOfFibonacciNums: number = evenOnly.reduce((acc, obj) => acc + obj);
 console.log(sumOfFibonacciNums);
