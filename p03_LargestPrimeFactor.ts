@@ -11,7 +11,7 @@ function primeFactor(num: number): number {
       return i;
     }
   }
-  return 0;
+  return NaN;
 }
 
 function factorTree(seed: number): number[] {
