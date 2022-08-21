@@ -4,23 +4,14 @@
  * What is the largest prime factor of the number 600851475143 ?
  */
 
-function isPrime(num: number): boolean {
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
-
 function primeFactor(num: number): number {
   const truncatedNum: number = Math.floor(Math.sqrt(num));
   for (let i = 2; i <= truncatedNum; i++) {
-    if (isPrime(i) && num % i == 0) {
+    if (num % i == 0) {
       return i;
     }
   }
-  return NaN;
+  return 0;
 }
 
 function factorTree(seed: number): number[] {
