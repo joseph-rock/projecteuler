@@ -9,11 +9,7 @@ function divisors(): number[] {
 }
 
 function isDivisible(num: number): boolean {
-  const remainders: number[] = divisors().map((divisor) => num % divisor);
-  return !remainders.reduce(
-    (Boolean, Number) => Number > 0 || Boolean,
-    false,
-  );
+  return divisors().every((divisor) => num % divisor === 0);
 }
 
 let ans: number = divisors().reduce((total, val) => total * val);
