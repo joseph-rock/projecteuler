@@ -21,7 +21,7 @@ function nextPrime(num: number): number {
   return num + 1;
 }
 
-let primes: number[] = [2];
+const primes: number[] = [2];
 while (primes.length < 10001) {
   primes.push(nextPrime(primes[primes.length - 1]));
 }
