@@ -33,7 +33,7 @@ function input(): number[] {
 function slidingWindow(list: number[], windowSize: number): number[][] {
   return list
     .map((_, i) => list.slice(i, i + windowSize))
-    .filter((e) => e.length >= windowSize);
+    .filter((e) => e.length == windowSize);
 }
 
 function maxProduct(list: number[][]): number {
