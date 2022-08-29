@@ -1,3 +1,5 @@
+import { last } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+
 /**
  * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
  *
@@ -23,8 +25,8 @@ function nextPrime(num: number): number {
 
 function primes(): number[] {
   const primes: number[] = [2];
-  while (primes[primes.length - 1] < 2000000) {
-    primes.push(nextPrime(primes[primes.length - 1]));
+  while (last(primes) < 2000000) {
+    primes.push(nextPrime(last(primes)));
   }
   primes.pop();
   return primes;
