@@ -29,9 +29,10 @@ function nextTriangleNumber(foo: [number, number] = [0, 0]): [number, number] {
 }
 
 function numDivisors(num: number): number {
-  if (num % 2 != 0) {
+  if (num % 100 != 0) {
     return -1;
   }
+
   const max: number = Math.floor(num / 2);
   let count = 0;
   for (let i = 2; i <= max; i++) {
@@ -39,13 +40,19 @@ function numDivisors(num: number): number {
       count++;
     }
   }
+
+  // Account for 1 and num
   return count + 2;
 }
 
-let start = nextTriangleNumber();
+function answer(): [number, number] {
+  let start = nextTriangleNumber();
 
-while (numDivisors(start[1]) < 500) {
-  start = nextTriangleNumber(start);
+  while (numDivisors(start[1]) < 500) {
+    start = nextTriangleNumber(start);
+  }
+
+  return start;
 }
 
-console.log(start);
+console.log(answer());
