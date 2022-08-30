@@ -1,3 +1,5 @@
+import { last } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+
 /**
  * The prime factors of 13195 are 5, 7, 13 and 29.
  *
@@ -27,5 +29,4 @@ function factorTree(seed: number): number[] {
 }
 
 const target = 600851475143;
-console.log(target);
-console.log(factorTree(target));
+console.log(last(factorTree(target)));
