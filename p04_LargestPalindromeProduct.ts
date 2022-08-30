@@ -1,3 +1,5 @@
+import { equals, reverse } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+
 /**
  * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is
  * 9009 = 91 × 99.
@@ -7,8 +9,7 @@
 
 function isPalindrome(num: number): boolean {
   const numString: string[] = num.toString().split("");
-  const revString: string[] = numString;
-  return numString.toString() == revString.reverse().toString();
+  return equals(numString, reverse(numString));
 }
 
 function isThreeDigits(num: number): boolean {
@@ -41,3 +42,5 @@ const largestNum = 999 * 999;
 const ans: [number, number] = findFactors(largestNum);
 console.log(ans[0] * ans[1]);
 console.log(ans);
+
+// console.log(isPalindrome(121));
