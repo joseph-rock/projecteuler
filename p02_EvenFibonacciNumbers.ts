@@ -19,5 +19,6 @@ function sequence(): number[] {
 }
 
 const evenOnly: number[] = sequence().filter((n) => n % 2 == 0);
-const sumOfFibonacciNums: number = evenOnly.reduce((acc, obj) => acc + obj);
+const sumOfFibonacciNums: number = evenOnly.reduce((total, num) => total + num);
+
 console.log(sumOfFibonacciNums);
