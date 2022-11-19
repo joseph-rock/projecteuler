@@ -1,3 +1,5 @@
+import { range } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+
 /**
  * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
  *
@@ -5,20 +7,20 @@
  */
 
 function divisors(): number[] {
-  return [...Array(20).keys()].map((n) => n + 1);
+  return range(1, 21);
 }
 
 function isDivisible(num: number): boolean {
   return divisors().every((divisor) => num % divisor === 0);
 }
 
-let ans: number = divisors().reduce((total, val) => total * val);
+let total: number = divisors().reduce((total, val) => total * val);
 
 for (let n = 20; n > 1; n--) {
-  if (isDivisible(ans / n)) {
-    ans /= n;
+  if (isDivisible(total / n)) {
+    total /= n;
   }
 }
 
-console.log(isDivisible(ans));
-console.log(ans);
+console.log(isDivisible(total));
+console.log(total);
