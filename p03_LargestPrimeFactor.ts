@@ -1,4 +1,4 @@
-import { last } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+import { last } from "./deps.ts";
 
 /**
  * The prime factors of 13195 are 5, 7, 13 and 29.

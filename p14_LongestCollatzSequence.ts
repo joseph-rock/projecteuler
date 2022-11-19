@@ -1,9 +1,4 @@
-import {
-  last,
-  prop,
-  range,
-  sortBy,
-} from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+import { last, prop, range, sortBy } from "./deps.ts";
 
 /**
  * The following iterative sequence is defined for the set of positive integers:

@@ -1,4 +1,4 @@
-import { equals, reverse } from "https://deno.land/x/ramda@v0.27.2/mod.ts";
+import { equals, reverse } from "./deps.ts";
 
 /**
  * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is
